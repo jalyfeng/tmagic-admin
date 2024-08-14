@@ -29,9 +29,14 @@ import editorPlugin from '@src/plugins/editor';
 import router from '@src/router';
 import installComponents from '@src/use/use-comp';
 
+import '@tmagic/editor/src/theme/index.scss'
+import '@tmagic/form/src/theme/index.scss'
+
 import 'element-plus/dist/index.css';
 import '@tmagic/editor/dist/style.css';
 import '@tmagic/form/dist/style.css';
+import '@tmagic/table/dist/style.css';
+
 
 const app = createApp(App);
 app.use(ElementPlus);

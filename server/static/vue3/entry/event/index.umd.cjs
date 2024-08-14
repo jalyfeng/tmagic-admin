@@ -7,7 +7,7 @@
   const page = {
     methods: [
       {
-        label: "\u5237\u65B0\u9875\u9762",
+        label: "刷新页面",
         value: "refresh"
       }
     ]
@@ -16,21 +16,21 @@
   const overlay = {
     methods: [
       {
-        label: "\u6253\u5F00\u8499\u5C42",
+        label: "打开蒙层",
         value: "openOverlay"
       },
       {
-        label: "\u5173\u95ED\u8499\u5C42",
+        label: "关闭蒙层",
         value: "closeOverlay"
       }
     ],
     events: [
       {
-        label: "\u6253\u5F00\u8499\u5C42",
+        label: "打开蒙层",
         value: "overlay:open"
       },
       {
-        label: "\u5173\u95ED\u8499\u5C42",
+        label: "关闭蒙层",
         value: "overlay:close"
       }
     ]

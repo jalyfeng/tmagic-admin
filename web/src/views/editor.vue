@@ -5,9 +5,13 @@
     :runtime-url="runtimeUrl"
     :component-group-list="componentList"
     :modelValue="uiConfigs"
-    :props-values="magicPresetValues"
     :props-configs="magicPresetConfigs"
+    :props-values="magicPresetValues"
     :event-method-list="magicPresetEvents"
+    :datasource-event-method-list="datasourceEventMethodList"
+    :datasource-configs="datasourceConfigs"
+    :datasource-values="datasourceValues"
+    :datasource-list="datasourceList"
     :default-selected="editorDefaultSelected"
     :moveable-options="moveableOptions"
   ></m-editor>
@@ -18,7 +22,7 @@ import { Component, computed, defineComponent, markRaw, ref } from 'vue';
 import { useRoute } from 'vue-router';
 import { Edit, FolderOpened, SwitchButton, Tickets } from '@element-plus/icons-vue';
 
-import type { MoveableOptions } from '@tmagic/editor';
+import type { MoveableOptions, DatasourceTypeOption } from '@tmagic/editor';
 import { ComponentGroup } from '@tmagic/editor';
 import { NodeType } from '@tmagic/schema';
 import { CustomizeMoveableOptionsCallbackConfig } from '@tmagic/stage';
@@ -45,10 +49,19 @@ export default defineComponent({
     const uiConfigs = computed(() => magicStore.get('uiConfigs'));
     const editorDefaultSelected = computed(() => magicStore.get('editorDefaultSelected'));
     const componentList = ref<ComponentGroup[]>([]);
-
+    const datasourceList: DatasourceTypeOption[] = [];
     const magicPresetValues = ref<Record<string, any>>({});
     const magicPresetConfigs = ref<Record<string, any>>({});
     const magicPresetEvents = ref<Record<string, any>>({});
+    const datasourceConfigs = ref<Record<string, any>>({});
+    const datasourceValues = ref<Record<string, any>>({});
+    const datasourceEventMethodList = ref<Record<string, any>>({
+      base: {
+        events: [],
+        methods: [],
+      },
+    });
+
     // 获取编辑器左侧组件树
     const getComponentList = async () => {
       const { data: list } = await editorApi.getComponentList();
@@ -66,14 +79,20 @@ export default defineComponent({
       await initConfigByActId({ actId: Number(route.params.actId) });
     };
 
-    asyncLoadJs('/static/vue3/entry/config/index.umd.cjs').then(() => {
-      magicPresetConfigs.value = (window as any).magicPresetConfigs;
+    asyncLoadJs(`/static/vue3/entry/config/index.umd.cjs`).then(() => {
+      magicPresetConfigs.value = (globalThis as any).magicPresetConfigs;
     });
-    asyncLoadJs('/static/vue3/entry/value/index.umd.cjs').then(() => {
-      magicPresetValues.value = (window as any).magicPresetValues;
+    asyncLoadJs(`/static/vue3/entry/value/index.umd.cjs`).then(() => {
+      magicPresetValues.value = (globalThis as any).magicPresetValues;
     });
-    asyncLoadJs('/static/vue3/entry/event/index.umd.cjs').then(() => {
-      magicPresetEvents.value = (window as any).magicPresetEvents;
+    asyncLoadJs(`/static/vue3/entry/event/index.umd.cjs`).then(() => {
+      magicPresetEvents.value = (globalThis as any).magicPresetEvents;
+    });
+    asyncLoadJs(`/static/vue3/entry/ds-config/index.umd.cjs`).then(() => {
+      datasourceConfigs.value = (globalThis as any).magicPresetDsConfigs;
+    });
+    asyncLoadJs(`/static/vue3/entry/ds-value/index.umd.cjs`).then(() => {
+      datasourceValues.value = (globalThis as any).magicPresetDsValues;
     });
 
     getComponentList();
@@ -88,6 +107,10 @@ export default defineComponent({
       magicPresetValues,
       magicPresetConfigs,
       magicPresetEvents,
+      datasourceConfigs,
+      datasourceValues,
+      datasourceList,
+      datasourceEventMethodList,
       editorDefaultSelected,
       moveableOptions: (config?: CustomizeMoveableOptionsCallbackConfig): MoveableOptions => {
         const options: MoveableOptions = {};

@@ -37,7 +37,7 @@ import { View } from '@element-plus/icons-vue';
 import { ElMessage } from 'element-plus';
 
 import { editorService } from '@tmagic/editor';
-import { MPage } from '@tmagic/schema';
+import { MPage, MPageFragment } from '@tmagic/schema';
 
 import publishApi from '@src/api/publish';
 import magicStore from '@src/store/index';
@@ -106,7 +106,7 @@ export default defineComponent({
     const getPageName = () => {
       // 从magic-editor root 拿到最新的页面名字
       state.pageList = [];
-      root.value?.items.forEach((item: MPage) => {
+      root.value?.items.forEach((item: MPage | MPageFragment) => {
         state.pageList.push(item.name as string);
       });
       const actInfo = magicStore.get('actInfo') as ActInfo;

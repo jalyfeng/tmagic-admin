@@ -53,6 +53,7 @@ export default defineComponent({
   setup() {
     const height = ref('auto');
     const aside = inject('aside') as AsideState;
+    const route = useRoute();
 
     onMounted(() => {
       // 高度自适应
@@ -69,7 +70,7 @@ export default defineComponent({
       height,
       // 当前路由对应菜单项高亮
       defaultActive: computed(() => {
-        const route = useRoute();
+        // const route = useRoute();
         if (route.path.startsWith('/act/my')) {
           return '/act/my';
         }

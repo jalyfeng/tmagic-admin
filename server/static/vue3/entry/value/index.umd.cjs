@@ -21,7 +21,7 @@
   };
 
   const button = {
-    text: "\u8BF7\u8F93\u5165\u6587\u672C\u5185\u5BB9",
+    text: "请输入文本内容",
     multiple: true,
     style: {
       width: "270",
@@ -33,7 +33,7 @@
 
   const text = {
     type: "text",
-    text: "\u8BF7\u8F93\u5165\u6587\u672C\u5185\u5BB9",
+    text: "请输入文本内容",
     multiple: true,
     style: {
       width: "100",
@@ -74,6 +74,35 @@
     items: []
   };
 
+  const pageFragmentContainer = {
+    style: {
+      width: "",
+      height: ""
+    }
+  };
+
+  const pageFragment = {
+    items: [],
+    style: {
+      width: "375",
+      height: "817"
+    }
+  };
+
+  const iteratorContainer = {
+    style: {
+      width: "375",
+      height: "100"
+    },
+    itemConfig: {
+      style: {
+        width: "100%",
+        height: "100%"
+      }
+    },
+    items: []
+  };
+
   const values = {
     "page": page,
     "container": container,
@@ -81,7 +110,10 @@
     "text": text,
     "img": img,
     "qrcode": qrcode,
-    "overlay": overlay
+    "overlay": overlay,
+    "page-fragment-container": pageFragmentContainer,
+    "page-fragment": pageFragment,
+    "iterator-container": iteratorContainer
   };
 
   return values;

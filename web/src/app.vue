@@ -24,11 +24,12 @@ import type { AsideState } from '@src/typings';
 export default defineComponent({
   name: 'app',
   setup() {
+    const route = useRoute();
     const aside = reactive<AsideState>(AsideFormConfig);
     // 是否隐藏边框
     const hideFrame = computed(() => {
       const urlHideFrame = new URL(location.href).searchParams.get('hideFrame');
-      return urlHideFrame || useRoute().meta?.hideFrame;
+      return urlHideFrame || route.meta?.hideFrame;
     });
 
     // 折叠侧边栏
