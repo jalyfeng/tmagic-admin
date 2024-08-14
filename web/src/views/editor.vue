@@ -22,7 +22,7 @@ import { Component, computed, defineComponent, markRaw, ref } from 'vue';
 import { useRoute } from 'vue-router';
 import { Edit, FolderOpened, SwitchButton, Tickets } from '@element-plus/icons-vue';
 
-import type { MoveableOptions, DatasourceTypeOption } from '@tmagic/editor';
+import type { DatasourceTypeOption, MoveableOptions } from '@tmagic/editor';
 import { ComponentGroup } from '@tmagic/editor';
 import { NodeType } from '@tmagic/schema';
 import { CustomizeMoveableOptionsCallbackConfig } from '@tmagic/stage';
