@@ -22,6 +22,7 @@ import { getLogger } from 'log4js';
 
 import routers from '@src/routers';
 import staticRouters from '@src/routers/static';
+import SequelizeHelper from './sequelize';
 const app = new Koa();
 const { PORT } = process.env;
 
@@ -46,3 +47,10 @@ app.use(staticRouters.routes()).use(staticRouters.allowedMethods());
 app.listen(PORT);
 
 console.log(`server启动成功 端口:${PORT}`);
+SequelizeHelper.getInstance().sync({ force: false})
+.then(() => {
+  console.log('database sync finish');
+})
+.catch((err) => {
+  console.error(err);
+})

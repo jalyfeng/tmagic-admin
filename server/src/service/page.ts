@@ -88,7 +88,7 @@ export default class PageService {
         Promise.all(
           pages.map(async (page: PageInfo) => {
             // 如果page.id不是纯数字，说明是新建的页面，需要补入一些字段
-            const isNewPage = !/^\d+$/.test(page.id);
+            const isNewPage = !/^\d+$/.test(`${page.id}`);
             if (isNewPage) {
               pageColUpdate.pageCreateTime = getFormatTime();
               pageColUpdate.pageTitle = page.pageName;
@@ -106,7 +106,7 @@ export default class PageService {
                 attributes: ['id'],
               });
               const newPageId = newPageIdRes.toJSON();
-              await this.updateCode(newPageId.id, page);
+              await this.updateCode(`${newPageId.id}`, page);
             }
           }),
         );

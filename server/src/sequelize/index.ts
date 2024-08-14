@@ -25,10 +25,9 @@ export default class SequelizeHelper {
   private static instance;
   public static getInstance() {
     if (!SequelizeHelper.instance) {
-      const sequelize = new Sequelize(sqlConf.database, sqlConf.user, sqlConf.password, {
-        host: sqlConf.host,
-        port: sqlConf.port,
-        dialect: 'mysql',
+      const sequelize = new Sequelize({
+        dialect: 'sqlite',
+        storage: 'database.sqlite',
         define: {
           timestamps: false,
         },

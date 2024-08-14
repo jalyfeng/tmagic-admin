@@ -39,4 +39,4 @@ export const StaticPath = {
   PUBLISH: path.resolve(__dirname, '../../assets/publish'),
 };
 
-export const UiRuntimeJS = '<script src="https://unpkg.com/vue@next/dist/vue.runtime.global.js"></script>';
+export const UiRuntimeJS = '<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>';

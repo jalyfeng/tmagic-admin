@@ -28,7 +28,7 @@ export class Page extends Model<Page> {
     primaryKey: true,
     autoIncrement: true,
   })
-  id: string;
+  id: number;
 
   @ForeignKey(() => ActInfo)
   @Column({ field: 'act_id' })

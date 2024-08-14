@@ -67,7 +67,7 @@ export interface AbTestPageList {
 
 // 活动页面信息定义
 export interface PageInfo {
-  id?: string;
+  id?: number;
   pageTitle?: string;
   title?: string;
   name?: string;
