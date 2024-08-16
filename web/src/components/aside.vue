@@ -1,7 +1,7 @@
 <!-- 侧边栏 -->
 <template>
   <div class="m-aside">
-    <h1 class="logo" ref="logo">{{ aside.collapse ? '魔方' : '魔方系统' }}</h1>
+    <h1 class="logo" ref="logo">{{ aside.collapse ? 'vben' : 'vben' }}</h1>
     <el-scrollbar :style="`height: ${height}`">
       <el-aside
         class="app-aside"

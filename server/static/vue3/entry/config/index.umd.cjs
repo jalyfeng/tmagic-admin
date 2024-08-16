@@ -88,7 +88,7 @@
     {
       text: "图片",
       name: "src",
-      type: "data-source-input"
+      type: "upload-input"
     },
     {
       text: "链接",

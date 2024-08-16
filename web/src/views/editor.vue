@@ -23,6 +23,7 @@ import { useRoute } from 'vue-router';
 import { Edit, FolderOpened, SwitchButton, Tickets } from '@element-plus/icons-vue';
 
 import type { DatasourceTypeOption, MoveableOptions } from '@tmagic/editor';
+import type { MApp } from '@tmagic/schema';
 import { ComponentGroup } from '@tmagic/editor';
 import { NodeType } from '@tmagic/schema';
 import { CustomizeMoveableOptionsCallbackConfig } from '@tmagic/stage';
@@ -46,8 +47,15 @@ export default defineComponent({
     const route = useRoute();
     const editor = ref();
 
-    const uiConfigs = computed(() => magicStore.get('uiConfigs'));
-    const editorDefaultSelected = computed(() => magicStore.get('editorDefaultSelected'));
+    const uiConfigs = computed(() => magicStore.get<MApp>('uiConfigs'));
+    const editorDefaultSelected = computed(() => {
+      const uiConfigs = magicStore.get<MApp>('uiConfigs');
+      const { items = [] } = uiConfigs || {};
+      if (items.length <= 0) {
+        return null;
+      }
+      return items[0].id;
+    });
     const componentList = ref<ComponentGroup[]>([]);
     const datasourceList: DatasourceTypeOption[] = [];
     const magicPresetValues = ref<Record<string, any>>({});

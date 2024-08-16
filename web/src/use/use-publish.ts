@@ -37,7 +37,13 @@ export const initConfigByActId = async ({ actId }: { actId: number }) => {
     return;
   }
   const { pages, ...actInfo } = res.data;
-  const pageItems: any[] = [];
+  let uiConfigs: any = '{}'
+  if (pages.length > 0) {
+    uiConfigs = pages[0].srcCode
+  }
+  uiConfigs = eval(`(${uiConfigs})`);
+
+  let pageItems: any[] = [];
   pages?.forEach((page: PageInfo) => {
     if (page.srcCode) {
       // 可能包含组件自定义添加的code代码，并非纯粹的json对象
@@ -60,19 +66,25 @@ export const initConfigByActId = async ({ actId }: { actId: number }) => {
           backgroundColor: '#fff',
         },
         items: [],
+        codeBlocks: {}
       });
     }
   });
-  const uiConfigs = {
-    type: 'app',
+  // const uiConfigs = {
+  //   type: 'app',
+  //   id: actInfo.actCryptoId,
+  //   items: pageItems,
+  //   codeBlocks: pageCodeBlocks,
+  //   abTest: actInfo.abTest || [],
+  // };
+  uiConfigs = {
     id: actInfo.actCryptoId,
     items: pageItems,
-    abTest: actInfo.abTest || [],
-  };
+    ...uiConfigs
+  }
   magicStore.set('actInfo', actInfo);
   magicStore.set('pages', pages);
   magicStore.set('uiConfigs', uiConfigs);
-  magicStore.set('editorDefaultSelected', pageItems[0]?.id);
 };
 // 编辑器保存方法
 export const commitHandler = async () => {

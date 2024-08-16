@@ -1629,47 +1629,34 @@
   resolved "https://registry.npmmirror.com/@soda/get-current-script/-/get-current-script-1.0.2.tgz#a53515db25d8038374381b73af20bb4f2e508d87"
   integrity sha512-T7VNNlYVM1SgQ+VsMYhnDkcGmWhQdL0bDyGm5TlQ3GBXnJscEClUUOKduWTmm2zCnvNLC1hc3JpuXjs/nFOc5w==
 
-"@tmagic/core@1.4.16":
+"@tmagic/core@file:../../tmagic-editor/packages/core":
   version "1.4.16"
-  resolved "https://registry.npmmirror.com/@tmagic/core/-/core-1.4.16.tgz#e214cfa6133de8632d6941caf1092899030eb5de"
-  integrity sha512-rXNMtENGI+1YUQxp7jqqrAfUZ87cuF16wwSccpz+9+E8KG6VLRks110IjF1jcTxfcVY7tLrdeWX8RLTTYTz1Pg==
   dependencies:
     events "^3.3.0"
     lodash-es "^4.17.21"
 
-"@tmagic/data-source@1.4.6":
-  version "1.4.6"
-  resolved "https://registry.npmmirror.com/@tmagic/data-source/-/data-source-1.4.6.tgz#0dfd037750cd43fbe69d762b2a86802a95c48de2"
-  integrity sha512-xmnq/bN+EB29mPWVsjKseqXyToEhFjg+2rIc1OrHVM1WwT8Dhzft4BtXO23nAQzLClPst2lBnRbrxIeHRvVwmw==
+"@tmagic/data-source@file:../../tmagic-editor/packages/data-source":
+  version "1.4.16"
   dependencies:
-    "@tmagic/dep" "1.4.6"
+    "@tmagic/dep" "workspace:*"
     deep-state-observer "^5.5.13"
     events "^3.3.0"
     lodash-es "^4.17.21"
 
-"@tmagic/dep@1.4.16":
+"@tmagic/dep@workspace:*":
   version "1.4.16"
   resolved "https://registry.npmmirror.com/@tmagic/dep/-/dep-1.4.16.tgz#000544bf2dfbc08e0e98a7ec1752f8f1a5d4c5db"
   integrity sha512-wB7lE9wwODHPhOH/FvIyt5Gq/stuJ/0rw0H3uTDb3rkyI/R7tTxvGTjmTsUditV8xKiHmiql6IC/XjTvWOKiAw==
 
-"@tmagic/dep@1.4.6":
-  version "1.4.6"
-  resolved "https://registry.npmmirror.com/@tmagic/dep/-/dep-1.4.6.tgz#6dc91ef84691667d1a6f2aa39a475eb0725a1234"
-  integrity sha512-y1ARbfiypycIRdDxJpIDQPc0R0GdpLkU+69BzBfFC6LJ2yhAt4ApGa6ocEzYqzw44tRoUmIb/5oaVKrUbf5I2Q==
-
-"@tmagic/design@1.4.16":
+"@tmagic/design@file:../../tmagic-editor/packages/design":
   version "1.4.16"
-  resolved "https://registry.npmmirror.com/@tmagic/design/-/design-1.4.16.tgz#ded7527805a3ea996bc853f6cb44b2a5bf8c8d54"
-  integrity sha512-zyO1ym2wGj5VH6mQaKzdYd2mb6DAPrlFfCGgv0kJ4h8w57e7kjrZoBB5RJXggq0lfqUf080Mgc6+mJo2q5mEcQ==
 
-"@tmagic/editor@1.4.16":
+"@tmagic/editor@file:../../tmagic-editor/packages/editor":
   version "1.4.16"
-  resolved "https://registry.npmmirror.com/@tmagic/editor/-/editor-1.4.16.tgz#ac0539a223d4c19377cc08510353f254c76c0eb0"
-  integrity sha512-hqJc0pDXYV7EUTFb0gU+SjG7Wtao9Hv3kaFR15Wp0Je5KGrcEJLerbTSV5uzQEmQtovjZChu53q9AjHXwujZ/g==
   dependencies:
     "@element-plus/icons-vue" "^2.3.1"
-    "@tmagic/dep" "1.4.16"
-    "@tmagic/table" "1.4.16"
+    "@tmagic/dep" "workspace:*"
+    "@tmagic/table" "workspace:*"
     buffer "^6.0.3"
     color "^3.1.3"
     emmet-monaco-es "^5.3.0"
@@ -1681,29 +1668,21 @@
     serialize-javascript "^6.0.0"
     sortablejs "^1.15.2"
 
-"@tmagic/element-plus-adapter@1.4.16":
+"@tmagic/element-plus-adapter@file:../../tmagic-editor/packages/element-plus-adapter":
   version "1.4.16"
-  resolved "https://registry.npmmirror.com/@tmagic/element-plus-adapter/-/element-plus-adapter-1.4.16.tgz#9744179757242c417b1941a4dcab08139482be90"
-  integrity sha512-zysb4AfZimxNGE6fEyVb71cRNbSdZkeN+gkv9xTEFIYmPUoeYPriCaOP69800qWm9+IHU2stsDkNlDcpOrDS/g==
 
-"@tmagic/form@1.4.16":
+"@tmagic/form@file:../../tmagic-editor/packages/form":
   version "1.4.16"
-  resolved "https://registry.npmmirror.com/@tmagic/form/-/form-1.4.16.tgz#f560a37b8097040b39a79b91abf3253a6cf38c77"
-  integrity sha512-TAqEJE9qC0ryuTMKhujGCZt2XAYiDAdiznyHQ0i2bSvogErHJcGwXAZiiYzQrHKTSK9k1wx8GgM1uy/cZs5yYQ==
   dependencies:
     "@element-plus/icons-vue" "^2.3.1"
     lodash-es "^4.17.21"
     sortablejs "^1.15.2"
 
-"@tmagic/schema@1.4.16":
+"@tmagic/schema@file:../../tmagic-editor/packages/schema":
   version "1.4.16"
-  resolved "https://registry.npmmirror.com/@tmagic/schema/-/schema-1.4.16.tgz#8b9195fd19028eb78f048e7b5fad22f2b3a97599"
-  integrity sha512-1aPNwOZcLEQMnnp7n8Azrbq2kamBnUW0i6CizC7LOGXzIDV7kNvHKP/SLjZoKc86i8XX863+8mRwop5gkn5W+g==
 
-"@tmagic/stage@1.4.16":
+"@tmagic/stage@file:../../tmagic-editor/packages/stage":
   version "1.4.16"
-  resolved "https://registry.npmmirror.com/@tmagic/stage/-/stage-1.4.16.tgz#3e94914ccd834f3042e5ac61c51afde400dc1336"
-  integrity sha512-/05Im0FkB6xH/PR/FOwf7TJc68fTWA7badJeBq2eL0ofctdBDMfJ/rlW6tcO/xCZ2KHFJH9v0XFWWW0UA+48ew==
   dependencies:
     "@scena/guides" "^0.29.2"
     events "^3.3.0"
@@ -1712,11 +1691,22 @@
     moveable "^0.53.0"
     moveable-helper "^0.4.0"
 
-"@tmagic/table@1.4.16":
+"@tmagic/table@file:../../tmagic-editor/packages/table":
+  version "1.4.16"
+  dependencies:
+    lodash-es "^4.17.21"
+
+"@tmagic/table@workspace:*":
   version "1.4.16"
   resolved "https://registry.npmmirror.com/@tmagic/table/-/table-1.4.16.tgz#28d3e31de3c03886d0b8b1fdef522b3de1061d99"
   integrity sha512-ulLVpy5XOah8E8VbOntuiIvLiajp1ChzvMhla1IoQHmX1JwLsro69q9fRVU8UdGxJ/dxBd6qFHrLbjGVJ0XzPw==
   dependencies:
+    lodash-es "^4.17.21"
+
+"@tmagic/utils@/Users/jaly/Documents/project/git/react/tmagic-editor/packages/utils":
+  version "1.4.16"
+  dependencies:
+    dayjs "^1.11.11"
     lodash-es "^4.17.21"
 
 "@tmagic/utils@1.4.16":
@@ -8898,7 +8888,7 @@ string-length@^5.0.1:
     char-regex "^2.0.0"
     strip-ansi "^7.0.1"
 
-"string-width-cjs@npm:string-width@^4.2.0", string-width@^4.1.0, string-width@^4.2.0, string-width@^4.2.3:
+"string-width-cjs@npm:string-width@^4.2.0":
   version "4.2.3"
   resolved "https://registry.npmmirror.com/string-width/-/string-width-4.2.3.tgz#269c7117d27b05ad2e536830a8ec895ef9c6d010"
   integrity sha512-wKyQRQpjJ0sIp62ErSZdGsjMJWsap5oRNihHhu6G7JVO/9jIB6UyevL+tXuOqrng8j/cxKTWyWUwvSTriiZz/g==
@@ -8914,6 +8904,15 @@ string-width@^2.1.1:
   dependencies:
     is-fullwidth-code-point "^2.0.0"
     strip-ansi "^4.0.0"
+
+string-width@^4.1.0, string-width@^4.2.0, string-width@^4.2.3:
+  version "4.2.3"
+  resolved "https://registry.npmmirror.com/string-width/-/string-width-4.2.3.tgz#269c7117d27b05ad2e536830a8ec895ef9c6d010"
+  integrity sha512-wKyQRQpjJ0sIp62ErSZdGsjMJWsap5oRNihHhu6G7JVO/9jIB6UyevL+tXuOqrng8j/cxKTWyWUwvSTriiZz/g==
+  dependencies:
+    emoji-regex "^8.0.0"
+    is-fullwidth-code-point "^3.0.0"
+    strip-ansi "^6.0.1"
 
 string-width@^5.0.1, string-width@^5.1.2:
   version "5.1.2"
@@ -8966,7 +8965,7 @@ string_decoder@~1.1.1:
   dependencies:
     safe-buffer "~5.1.0"
 
-"strip-ansi-cjs@npm:strip-ansi@^6.0.1", strip-ansi@^6.0.0, strip-ansi@^6.0.1:
+"strip-ansi-cjs@npm:strip-ansi@^6.0.1":
   version "6.0.1"
   resolved "https://registry.npmmirror.com/strip-ansi/-/strip-ansi-6.0.1.tgz#9e26c63d30f53443e9489495b2105d37b67a85d9"
   integrity sha512-Y38VPSHcqkFrCpFnQ9vuSXmquuv5oXOKpGeT6aGrr3o3Gc9AlVa6JBfUSOCnbxGGZF+/0ooI7KrPuUSztUdU5A==
@@ -8986,6 +8985,13 @@ strip-ansi@^4.0.0:
   integrity sha512-4XaJ2zQdCzROZDivEVIDPkcQn8LMFSa8kj8Gxb/Lnwzv9A8VctNZ+lfivC/sV3ivW8ElJTERXZoPBRrZKkNKow==
   dependencies:
     ansi-regex "^3.0.0"
+
+strip-ansi@^6.0.0, strip-ansi@^6.0.1:
+  version "6.0.1"
+  resolved "https://registry.npmmirror.com/strip-ansi/-/strip-ansi-6.0.1.tgz#9e26c63d30f53443e9489495b2105d37b67a85d9"
+  integrity sha512-Y38VPSHcqkFrCpFnQ9vuSXmquuv5oXOKpGeT6aGrr3o3Gc9AlVa6JBfUSOCnbxGGZF+/0ooI7KrPuUSztUdU5A==
+  dependencies:
+    ansi-regex "^5.0.1"
 
 strip-ansi@^7.0.1:
   version "7.1.0"
@@ -9880,7 +9886,7 @@ word-wrap@^1.2.5:
   resolved "https://registry.npmmirror.com/word-wrap/-/word-wrap-1.2.5.tgz#d2c45c6dd4fbce621a66f136cbe328afd0410b34"
   integrity sha512-BN22B5eaMMI9UMtjrGd5g5eCYPpCPDUy0FJXbYsaT5zYxjFOckS53SQDE3pWkVoWpHXVb3BrYcEN4Twa55B5cA==
 
-"wrap-ansi-cjs@npm:wrap-ansi@^7.0.0", wrap-ansi@^7.0.0:
+"wrap-ansi-cjs@npm:wrap-ansi@^7.0.0":
   version "7.0.0"
   resolved "https://registry.npmmirror.com/wrap-ansi/-/wrap-ansi-7.0.0.tgz#67e145cff510a6a6984bdf1152911d69d2eb9e43"
   integrity sha512-YVGIj2kamLSTxw6NsZjoBxfSwsn0ycdesmc4p+Q21c5zPuZ1pl+NfxVdxPtdHvmNVOQ6XSYG4AUtyt/Fi7D16Q==
@@ -9896,6 +9902,15 @@ wrap-ansi@^3.0.1:
   dependencies:
     string-width "^2.1.1"
     strip-ansi "^4.0.0"
+
+wrap-ansi@^7.0.0:
+  version "7.0.0"
+  resolved "https://registry.npmmirror.com/wrap-ansi/-/wrap-ansi-7.0.0.tgz#67e145cff510a6a6984bdf1152911d69d2eb9e43"
+  integrity sha512-YVGIj2kamLSTxw6NsZjoBxfSwsn0ycdesmc4p+Q21c5zPuZ1pl+NfxVdxPtdHvmNVOQ6XSYG4AUtyt/Fi7D16Q==
+  dependencies:
+    ansi-styles "^4.0.0"
+    string-width "^4.1.0"
+    strip-ansi "^6.0.0"
 
 wrap-ansi@^8.1.0:
   version "8.1.0"
